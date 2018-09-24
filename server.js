@@ -36,7 +36,7 @@ app.get('/posts', (req, res) => {
     });
 });
 
-app.get('posts/:id', (res, res) => {
+app.get('posts/:id', (res, req) => {
     Blog.findById(req.params.id)
     .then(blogs => res.json(blogs.serialize()))
     .catch(err => {
